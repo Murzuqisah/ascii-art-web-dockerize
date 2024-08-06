@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/static/img/favicon.png">
+    <title>Ascii Art Web</title>
+    <link rel="stylesheet" href="/static/style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <div class="navbar">
+        <a href="/about"><i class="fa fa-fw fa-info"></i> About</a>
+        <a href="/how-it-works"><i class="fa fa-fw fa-cogs"></i> How It Works</a>
+    </div>
+
+    <div class="container">
+        <h1>ASCII Art Web</h1>
+        <form action="/ascii-art" method="POST">
+            <div class="flex">
+                <label for="text" >Text:</label><br>
+                <textarea rows="4" cols="30" type="text" id="text" name="text" placeholder="Type something..." required></textarea><br>  
+            </div>
+            
+            <div class="block">
+                <div>
+                    <select name="banner" id="banner">
+                        <option value="standard">Standard</option>
+                        <option value="shadow">Shadow</option>
+                        <option value="thinkertoy">Thinkertoy</option>
+                    </select>
+                </div>
+                <div class="btn">
+                    <button type="submit">Generate</button>
+                </div>
+            </div>
+        </form>
+        <span class="left_1">Input:</span><br>
+        <div class="result">
+            <pre><span class="left_2">{{.Text}}</span></pre>
+        </div>
+
+        <div class="result-title"> 
+            <h2>Result:</h2>
+        </div>
+        <div class="result-box">
+            {{if .Result}}
+            <pre>{{.Result}}</pre>
+            {{end}}
+        </div>
+        <div class="separator"></div>
+    </div>
+    <div class="div-footer">
+        <footer class="footer">
+            <p>&copy; 2024 Created by <a href="https://github.com/Murzuqisah/" target="_blank" rel="noopener noreferrer">Joel</a>,
+                 <a href="https://github.com/denilany/" target="_blank" rel="noopener noreferrer">Denil</a> and 
+                 <a href="https://github.com/Bshisia/" target="_blank" rel="noopener noreferrer">Brian</a></p>
+        </footer>
+    </div>
+</body>
+</html>
